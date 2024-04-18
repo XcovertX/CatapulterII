@@ -24,6 +24,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-gradle-plugin:3.2.4'
+	
+    implementation 'org.danilopianini:gson-extras:1.2.0'
+    implementation 'com.google.code.gson:gson:2.7'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test' 
     implementation 'org.projectlombok:lombok:1.18.22'
