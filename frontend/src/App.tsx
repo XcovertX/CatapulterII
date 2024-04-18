@@ -5,14 +5,18 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    // Fetch message from backend
-    axios.get('http://localhost:8080/api/message')
-      .then(response => {
-        setMessage(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching message:', error);
-      });
+    // Fetch message from backend every seond
+    const interval = setInterval(() => {
+      
+      axios.get('http://localhost:8080/api/gameLoopTest')
+        .then(response => {
+          setMessage(response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching message:', error);
+        });
+      }, 1000)
+    return () => clearInterval(interval)
   }, []);
 
   return (

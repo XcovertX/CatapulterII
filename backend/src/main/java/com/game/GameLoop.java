@@ -16,6 +16,8 @@ public class GameLoop implements Runnable {
 	private int ups;
 	
 	private Game game;
+
+	public static double updateTime = 0.0;
 	
 	public GameLoop( Game game ) {
 		
@@ -50,15 +52,15 @@ public class GameLoop implements Runnable {
 	
 	private void update() {
 		
-		// try {
+		try {
 		// 	UserInterfaceNew.relayMessage("working");
 		// 	// game.updateWorld();
 				
 		// 	// game.getInputProcessor().update();
 			
-		// 	Thread.sleep(100); // TODO not sure how to appropriately free up the thread. Fix when build thread-pool
-			
-		// } catch (InterruptedException e) {
+			Thread.sleep(1000); // TODO not sure how to appropriately free up the thread. Fix when build thread-pool
+			updateTime = updateTime + 1.0;
+		} catch (InterruptedException e) {
 			
 		// 	e.printStackTrace();
 			
@@ -66,8 +68,9 @@ public class GameLoop implements Runnable {
 			
 		// 	System.out.println("Failed to update loop.");
 		// 	e.printStackTrace();
-		// }
-		// ups++;
+		}
+
+		ups++;
 	}
 	
 	private void render() {

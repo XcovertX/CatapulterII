@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CatapulterApplication {
 
 	public static void main(String[] args) {
-		System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXX Starting XXXXXXXXXXXXXXXXXXXXXXXXXX");
+		System.out.println("XXX BACKEND XXX");
 		SpringApplication.run(CatapulterApplication.class, args);
 
 		boolean mapBuilderMode = false;
