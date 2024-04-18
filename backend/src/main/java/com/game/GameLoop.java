@@ -2,7 +2,6 @@ package com.game;
 
 // import java.io.IOException;
 
-// import javafx.application.Platform;
 // import com.game.Game;
 // import com.UserInterface.UserInterfaceNew;
 
