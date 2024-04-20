@@ -5,10 +5,10 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    // Fetch message from backend every seond
+    // Fetch message from backend every second
     const interval = setInterval(() => {
       
-      axios.get('http://localhost:8080/api/gameLoopTest')
+      axios.get('http://localhost:8080/api/room')
         .then(response => {
           setMessage(response.data);
         })

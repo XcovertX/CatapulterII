@@ -15,6 +15,8 @@ COPY gradle/ ./gradle/
 # Copy the source code
 COPY src ./src/
 
+COPY files ./files/
+
 # Build the application
 RUN ./gradlew build
 

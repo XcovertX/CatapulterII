@@ -9,7 +9,9 @@ services:
       - mongodb
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/my_database
-
+    volumes:
+      - ./backend/files:/files
+  
   frontend:
     build: ./frontend
     ports:
