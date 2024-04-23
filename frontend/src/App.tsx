@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import TextAreaComponent from './components/TextAreaComponent';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -15,14 +16,18 @@ function App() {
         .catch(error => {
           console.error('Error fetching message:', error);
         });
-      }, 1000)
+      }, 5000)
     return () => clearInterval(interval)
   }, []);
 
   return (
     <div>
-      <h1>Welcome to My App</h1>
-      <p>Message from the backend: {message}</p>
+      <textarea
+        value={message}
+        rows={10}
+        cols={30}
+        className='p-5 text-center border border-red-500 font-mono'
+      />
     </div>
   );
 }
