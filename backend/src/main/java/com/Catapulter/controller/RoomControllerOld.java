@@ -11,20 +11,19 @@ import com.game.Game;
 import com.world.*;
 
 @RestController
-public class RoomController {
+public class RoomControllerOld {
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/api/room")
-    public ArrayList<String> getMap() {
+    @GetMapping("/api/roomString")
+    public String getMap() {
         return setRoom(Game.currentRoom);
     }
 
-    public ArrayList<String> setRoom(GameRoom aRoom) {
+    public String setRoom(GameRoom aRoom) {
 		
 		String mapRep = "";
 		String textMap = "";
 		ArrayList<String> mapList = new ArrayList<String>();
-		ArrayList<String> mapCharList = new ArrayList<String>();
 		String[] mapArray = new String[ aRoom.getRoomWidth() * aRoom.getRoomLength() ];
 		int tileNumberTotal = aRoom.getRoomLength() * aRoom.getRoomWidth();
 		// mainFrame.setTitle( aRoom.getName() );
@@ -39,7 +38,6 @@ public class RoomController {
 	    		textMap += ( " " + Integer.toString( index ) );
 	    		mapList.add( Integer.toString( index ) );
 	    		mapArray[ k ] = ( ( GameTile ) aRoom.getTiles().get( index ) ).getTileChar();
-				mapCharList.add(( ( GameTile ) aRoom.getTiles().get( index ) ).getTileChar());
 	    		k++;
 	    	}
 	    	textMap += "\r\n";
@@ -50,6 +48,19 @@ public class RoomController {
 	    	tileNumberTotal = tileNumberTotal - aRoom.getRoomLength();
     	}
 		
-        return mapCharList;
+	    int x = 0;
+	    for(int i = 0; i < aRoom.getRoomWidth(); i++ ) {
+	    	for( int j = 0; j < aRoom.getRoomLength(); j++ ) {
+	    		System.out.print( mapArray[x] );
+	    		x++;
+	    	}
+	    	System.out.println();
+	    }
+        return mapRep;
+		// map.setText( mapRep ); // TODO remove once new GUI is in place
+
+		
+		// Game.currentGame.getUI().getGuiController().setMapChars( mapRep );
+		
 	}
 }
