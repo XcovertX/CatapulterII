@@ -271,14 +271,14 @@ public class GameTile extends ThingHolder {
     
     public void setTileChar() {
     	
-    	// if( Game.currentGame.getPlayer().getTile().equals( this ) ) {
-    	// 	this.tileChar = Game.currentGame.getPlayer().getActorSymbol();
-    	// } else if( npcs.isEmpty() == false ) {
-    	// 	Actor mostRecentActor = ( Actor ) this.npcs.getLast();
-    	// 	this.tileChar = mostRecentActor.getActorSymbol();
-    	// } else if( npcs.isEmpty() == true ) {
+    	if( Game.currentGame.getPlayer().getTile().equals( this ) ) {
+    		this.tileChar = Game.currentGame.getPlayer().getActorSymbol();
+    	} else if( npcs.isEmpty() == false ) {
+    		Actor mostRecentActor = ( Actor ) this.npcs.getLast();
+    		this.tileChar = mostRecentActor.getActorSymbol();
+    	} else if( npcs.isEmpty() == true ) {
     		this.tileChar = defaultTileChar;
-    	// }
+    	}
     }
     
     public String getTileChar() {

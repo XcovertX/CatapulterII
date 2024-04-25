@@ -52,8 +52,7 @@ public class GameLoop implements Runnable {
 	private void update() {
 		
 		try {
-		// 	UserInterfaceNew.relayMessage("working");
-		// 	// game.updateWorld();
+			game.updateWorld();
 				
 		// 	// game.getInputProcessor().update();
 			

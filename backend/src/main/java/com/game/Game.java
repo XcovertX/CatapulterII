@@ -54,6 +54,7 @@ public class Game {
     private InputProcessor inputProcessor;
     private boolean roomChange = false;
     private Actor player;  // the player - provides 'first person perspective'
+	private Cat cat;
     
     public Game( boolean mapBuilderMode, boolean newGame ) {
     	
@@ -75,7 +76,8 @@ public class Game {
     		currentWorld.setLocations();
     		
     		player = new Actor( "player", "This is a player", currentTile, new ThingList(), " @ " );
-    		
+    		cat = new Cat( "cat", "This is a cat", currentTile, new ThingList(), " c ", 2 );
+
     		userInterface = new UserInterfaceNew( player );
     		userInterface.getDisplay().setRoom( currentRoom );
  
@@ -106,13 +108,6 @@ public class Game {
 //    	
 //    }
 
-//     public void showIntro(){
-    	
-//         String s;
-//         SignReader welcome = new SignReader( "files/graphics", "welcome.txt" );
-//         s = welcome.getText();
-//         // userInterface.println( s );
-//     }
     
     public void roomChange() { this.roomChange = true; }
     

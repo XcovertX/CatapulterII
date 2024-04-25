@@ -1,14 +1,14 @@
 package com.actor;
 
-// import com.characteristics.Constitution;
-// import com.characteristics.Dexterity;
+import com.characteristics.Constitution;
+import com.characteristics.Dexterity;
 import com.objects.ThingList;
-// import com.inputProcessor.MovementController;
+import com.inputProcessor.MovementController;
 import com.world.GameTile;
 
 public abstract class NonPlayerActor extends Actor {
 	
-	// protected transient MovementController mc;
+	protected transient MovementController mc;
 	
 	private int movementFreq;
 	private int movementDelay;
@@ -38,13 +38,13 @@ public abstract class NonPlayerActor extends Actor {
 		this.type = "NonPlayerActor";
 	}
 
-	// public MovementController getMC() {
-	// 	return mc;
-	// }
+	public MovementController getMC() {
+		return mc;
+	}
 
-	// public void setMC( MovementController mc ) {
-	// 	this.mc = mc;
-	// }
+	public void setMC( MovementController mc ) {
+		this.mc = mc;
+	}
 	
 	public abstract void actionList();
 
